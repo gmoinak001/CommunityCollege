@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bgimg {
+    background-image: url('../images/bgimg.png');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+}
+
+.topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+}
+.topright {
+    position: absolute;
+    top: 0;
+    right: 16px;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    font-size:15px;
+}
+.bottomright {
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+}
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+hr {
+    margin: auto;
+    width: 40%;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #424242;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fff;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color:#818181;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.search {
+  width: 230%;
+  position: absolute
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 1px solid #1C2833;
+  padding: 5px;
+  height: 53px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 25px;
+}
+
+.searchTerm:focus{
+  color: black;
+  font-size: 25px;
+}
+
+.searchButton {
+  position: absolute;
+  right: -90px;
+  width: 60px;
+  height: 66px;
+  border: 1px solid #1C2833;
+  background: #e3f2fd;
+  text-align: center;
+  color: #1C2833;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 30%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Profile</a>
+    <a href="#">Offers</a>
+    <a href="#">Referral</a>
+    <a href="#">Logout</a>
+  </div>
+
+
+<div class="bgimg">
+  <div class="topleft">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  </div>
+  <div class="topright">
+    <a href="./dashboard.html"><img src="../images/logo.png" style="height: 50px;"></a>
+  </div>
+  <div class="bottomleft">
+    &COPY; 2018 Community Campus
+  </div>
+
+    <div class="wrap">
+      <div style="margin-left: 0px; margin-top: 65px;">
+        <img src="../images/logobig.png" width="750px"></img>
+      </div><br>
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What will you learn today?">
+      <a href="./results.html"><button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button></a>
+
+</div>
+  </div>
+</div>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>
