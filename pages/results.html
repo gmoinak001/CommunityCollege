@@ -4,7 +4,11 @@
   <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
   <title>CC | Search Results</title>  
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 body, html {
     height: 100%;
@@ -139,6 +143,60 @@ hr {
   left: 33%;
   transform: translate(-50%, -50%);
 }
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
 </style>
 </head>
 <body>
@@ -161,7 +219,7 @@ hr {
   </div>
 
     <div class="wrap">
-        <div class="profile1" style="background-color: #fff; margin-top: 1100px; height: 350px; width: 800px;">
+        <div class="profile1" style="background-color: #fff; margin-top: 50px; height: 350px; width: 800px;">
             <div class="propic" style="float: left; width: 30%; height: 90%; margin-right: 23px;">
                 <img src="../images/jimi.jpg" style="height: 100%; width: 100%;">
             </div>
@@ -172,40 +230,72 @@ hr {
                     <strong>Rate/hr: </strong>Rs. 45/-
                 </p>
                 <br>
-                <button type="submit">Accept</button>
+                <button type="submit" onclick="openForm()" style="float: left; margin-right: 10px;">Accept</button>
+                <div class="form-popup" id="myForm">
+                        <form class="form-container">
+                          <h1>Payment Gateway</h1>
+                      
+                          
+                          <p>This section will contain the terms and conditions.</p>
+                      
+                          <button type="submit" class="btn"><a href="./session.html">Pay & start</a></button>
+                          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        </form>
+                </div></div>
                 <button type="submit">Deny</button>
-            </div>
-        </div>
-        <div class="profile2" style="background-color: #EAECEE; margin-top: 125px; height: 350px; width: 800px;">
+            </div><br>
+            <div class="profile1" style="background-color: #fff; margin-top: 50px; height: 350px; width: 800px;">
+                    <div class="propic" style="float: left; width: 30%; height: 90%; margin-right: 23px;">
+                        <img src="../images/jimi.jpg" style="height: 100%; width: 100%;">
+                    </div>
+                    <div class="prodes">
+                        <h3>Jimi Hendrix</h3>
+                        <p><strong>Area of Expertise: </strong>History, History of Music, History of Politics<p />
+                            <strong>Reviews: </strong>4.5/5.0<p />
+                            <strong>Rate/hr: </strong>Rs. 45/-
+                        </p>
+                        <br>
+                        <button type="submit" onclick="openForm()" style="float: left; margin-right: 10px;">Accept</button>
+                        <div class="form-popup" id="myForm">
+                                <form class="form-container">
+                                  <h1>Payment Gateway</h1>
+                              
+                                  
+                                  <p>This section will contain the terms and conditions.</p>
+                              
+                                  <button type="submit" class="btn"><a href="./session.html">Pay & start</a></button>
+                                  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                                </form>
+                        </div></div>
+                        <button type="submit">Deny</button>
+                    </div><br>
+                    <div class="profile1" style="background-color: #fff; margin-top: 50px; height: 350px; width: 800px;">
             <div class="propic" style="float: left; width: 30%; height: 90%; margin-right: 23px;">
-                <img src="../images/trevor.png" style="height: 100%; width: 100%;">
+                <img src="../images/jimi.jpg" style="height: 100%; width: 100%;">
             </div>
             <div class="prodes">
-                <h3>Trevor</h3>
+                <h3>Jimi Hendrix</h3>
                 <p><strong>Area of Expertise: </strong>History, History of Music, History of Politics<p />
-                    <strong>Reviews: </strong>3.8/5.0<p />
-                    <strong>Rate/hr: </strong>Rs. 40/-
-                </p>
-                <br>
-                <button type="submit">Accept</button>
-                <button type="submit">Deny</button>
-            </div>
-        </div>
-        <div class="profile3" style="background-color: #EBF5FB; margin-top: 125px; height: 350px; width: 800px;">
-            <div class="propic" style="float: left; width: 30%; height: 90%; margin-right: 23px;">
-                <img src="../images/grey.png" style="height: 100%; width: 100%;">
-            </div>
-            <div class="prodes">
-                <h3>S. Grey</h3>
-                <p><strong>Area of Expertise: </strong>History, History of Music, History of Politics<p />
-                    <strong>Reviews: </strong>4.8/5.0<p />
+                    <strong>Reviews: </strong>4.5/5.0<p />
                     <strong>Rate/hr: </strong>Rs. 45/-
                 </p>
                 <br>
-                <button type="submit">Accept</button>
+                <button type="submit" onclick="openForm()" style="float: left; margin-right: 10px;">Accept</button>
+                <div class="form-popup" id="myForm">
+                        <form class="form-container">
+                          <h1>Payment Gateway</h1>
+                      
+                          
+                          <p>This section will contain the terms and conditions.</p>
+                      
+                          <button type="submit" class="btn"><a href="./session.html">Pay & start</a></button>
+                          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        </form>
+                </div></div>
                 <button type="submit">Deny</button>
             </div>
         </div>
+        
         <br><br>
     </div>
   </div>
@@ -218,6 +308,17 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+
 </script>
 </body>
 </html>
